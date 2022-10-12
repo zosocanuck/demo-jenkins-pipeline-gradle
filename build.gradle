@@ -4,12 +4,14 @@ plugins {
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
+apply plugin: 'application'
 apply plugin: 'maven-publish'
 apply plugin: 'io.spring.dependency-management'
 
 group = 'com.powple'
 version = '0.0.2-SNAPSHOT'
 sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 repositories {
 	mavenCentral()
