@@ -23,7 +23,7 @@ jar {
 	archiveVersion = '0.1.0'
 }
 
-jar.doLast {
+tasks.register('hello') {
 
         def signdir  = new File("$buildDir/jars/signed")
         signdir.mkdirs()
