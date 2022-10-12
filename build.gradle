@@ -8,6 +8,8 @@ apply plugin: 'application'
 apply plugin: 'maven-publish'
 apply plugin: 'io.spring.dependency-management'
 
+mainClassName = 'com.powple.demo.DemoApplication'
+
 group = 'com.powple'
 version = '0.0.2-SNAPSHOT'
 sourceCompatibility = 1.8
