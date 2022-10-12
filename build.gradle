@@ -23,8 +23,8 @@ jar {
 	archiveVersion = '0.1.0'
 }
 
-task hello {
-
+task.register('sign') {
+	doLast {
         def signdir  = new File("$buildDir/jars/signed")
         signdir.mkdirs()
 
@@ -38,7 +38,7 @@ task hello {
                 verbose:true,
                 preservelastmodified:"true"
         )
-
+	}
 }
 
 publishing {
@@ -50,5 +50,4 @@ publishing {
 	}
 }
 
-hello.dependsOn jar
 build.dependsOn jar
