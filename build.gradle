@@ -24,6 +24,13 @@ jar {
 }
 
 tasks.register('sign') {
+    doLast {
+        String greeting = 'hello from Ant'
+        ant.echo(message: greeting)
+    }
+}
+
+tasks.register('sign2') {
 	doLast {
         def signdir  = new File("$buildDir/jars/signed")
         signdir.mkdirs()
