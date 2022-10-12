@@ -23,7 +23,7 @@ jar {
 	archiveVersion = '0.1.0'
 }
 
-tasks.register('hello') {
+task hello {
 
         def signdir  = new File("$buildDir/jars/signed")
         signdir.mkdirs()
@@ -50,4 +50,5 @@ publishing {
 	}
 }
 
+hello.dependsOn jar
 build.dependsOn jar
