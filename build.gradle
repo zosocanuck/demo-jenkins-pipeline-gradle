@@ -15,6 +15,11 @@ repositories {
 	mavenCentral()
 }
 
+jar {
+	archiveBaseName = 'demoapp.jar'
+	archiveVersion = '0.1.0'
+}
+
 
 dependencies {
 	implementation('org.springframework.boot:spring-boot-starter-actuator')
@@ -30,3 +35,23 @@ publishing {
 		}
 	}
 }
+
+task signJar <<{
+
+        def signdir  = new File("$buildDir/jars/signed")
+        signdir.mkdirs()
+
+        ant.signjar(
+                destDir: "${signdir.absolutePath}",
+                jar: 'demoapp-0.1.0.jar',
+                alias:'somealias',
+                storetype:"jks",
+                keystore:"certs/keystore.jks",
+                storepass:'somepassword',
+                verbose:true,
+                preservelastmodified:"true"
+        )
+
+}
+
+build.dependsOn signJar
