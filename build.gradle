@@ -25,7 +25,7 @@ jar {
 
 tasks.register('sign') {
     doLast {
-		ant.signjar(jar: '${buildDir}/libs/demoapp-0.1.0.jar', alias: 'vsign-rsa2048-cert', storetype: 'PKCS11', storepass: 'NONE', providerclass: 'sun.security.pkcs11.SunPKCS11', providerarg: '/root/venafipkcs11.txt')
+		ant.signjar(jar: "${buildDir}/libs/demoapp-0.1.0.jar", alias: 'vsign-rsa2048-cert', storetype: 'PKCS11', storepass: 'NONE', providerclass: 'sun.security.pkcs11.SunPKCS11', providerarg: '/root/venafipkcs11.txt')
     }
 }
 
