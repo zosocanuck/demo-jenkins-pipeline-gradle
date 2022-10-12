@@ -1,12 +1,11 @@
 plugins {
-	id 'org.springframework.boot' version '2.2.2.RELEASE'
+	id 'java-library'
 }
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'application'
 apply plugin: 'maven-publish'
-apply plugin: 'io.spring.dependency-management'
 
 mainClassName = 'com.powple.demo.DemoApplication'
 
@@ -40,13 +39,6 @@ jar.doLast {
                 preservelastmodified:"true"
         )
 
-}
-
-
-dependencies {
-	implementation('org.springframework.boot:spring-boot-starter-actuator')
-	implementation('org.springframework.boot:spring-boot-starter-web')
-	testImplementation('org.springframework.boot:spring-boot-starter-test')
 }
 
 publishing {
