@@ -19,7 +19,7 @@ repositories {
 }
 
 jar {
-	archiveBaseName = 'demoapp.jar'
+	archiveBaseName = 'demoapp'
 	archiveVersion = '0.1.0'
 }
 
@@ -27,6 +27,7 @@ tasks.register('sign') {
     doLast {
         String greeting = 'hello from Ant'
         ant.echo(message: greeting)
+		ant.signjar(jar: 'build/libs/demoapp-0.1.0.jar')
     }
 }
 
